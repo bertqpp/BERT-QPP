@@ -1,0 +1,27 @@
+from sentence_transformers import SentenceTransformer, InputExample, losses, util,evaluation
+from torch.utils.data import DataLoader
+import pickle 
+from scipy.stats import kendalltau,pearsonr
+
+with open('pklfiles/map_20_train.pkl', 'rb') as f:
+    q_map_first_doc_train=pickle.load(f)
+
+train_examples=[]
+
+for key in q_map_first_doc_train:
+    if "first_doc" in q_map_first_doc_train[key].keys():
+        qtext=q_map_first_doc_train[key]["text"]
+        firstdoctext=q_map_first_doc_train[key]["first_doc"]
+        map_value=q_map_first_doc_train[key]["map"]
+        train_examples.append( InputExample(texts=[qtext,firstdoctext],label=map_value ))
+    if len(train_examples)>100:
+        break
+
+batch_size=8
+num_epoch=1
+model = SentenceTransformer('bert-base-uncased')
+train_dataloader = DataLoader(train_examples, shuffle=True, batch_size=batch_size)
+train_loss = losses.CosineSimilarityLoss(model)
+model.fit(train_objectives=[(train_dataloader, train_loss)], epochs=num_epoch, warmup_steps=100)
+model.save("models/tuned_model_bi_bert-base-uncased_e_"+str(num_epoch)+'_b_'+str(batch_size))
+
