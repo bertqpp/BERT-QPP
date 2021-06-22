@@ -25,7 +25,7 @@ cosine_scores = util.pytorch_cos_sim(embeddings1, embeddings2)
 
 actual=[]
 predicted=[]
-out=open('results/QPP_bi_'+model_name,'w')
+out=open('results/QPP-bi_'+model_name,'w')
 
 for i in range(len(sentences1)):
     out.write(qs[i]+'\t'+str(float(cosine_scores[i][i]))+'\n')
