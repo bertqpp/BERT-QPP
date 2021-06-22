@@ -12,7 +12,7 @@ map_value_test=[]
 queries=[]
 for key in q_map_first_doc_test:
     if "first_doc" in q_map_first_doc_test[key].keys():
-        sentences.append([q_map_first_doc_test[key]["text"],q_map_first_doc_test[key]["first_doc"]])
+        sentences.append([q_map_first_doc_test[key]["qtext"],q_map_first_doc_test[key]["first_doc"]])
         queries.append(key)
 
 model = CrossEncoder("models/"+trained_model, num_labels=1)
