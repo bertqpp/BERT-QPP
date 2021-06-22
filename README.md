@@ -8,7 +8,7 @@ To replicate our results  with BERT-QPP<sub>cross</sub> and BERT-QPP<sub>bi</sub
 
  1. Clone this repository.
  2. Install the required packages are listed in ```requirement.txt``` on python 3.7+. 
- 3. Download [MSMARCO collection](https://msmarco.blob.core.windows.net/msmarcoranking/collectionandqueries.tar.gz) ```collection.tsv``` and put it in ```collection``` repository.
+ 3. Download [MSMARCO collection](https://msmarco.blob.core.windows.net/msmarcoranking/collectionandqueries.tar.gz) ```collection.tsv``` and store it in ```collection``` repository.
  4. If you are willing to evaluate BM25 on MSMARCO, fo to next step. Otherwise, when evaluating any other retrieval method, you need to prepare the run file as folllows:
     * ```bm25_first_docs_train.tsv``` and ```bm25_first_docs_dev.tsv``` includes the run file for first retrieved documents for queries in MSMARCO train and dev set. You can put the runfile of your desired retrieval approach in the folloinwg format for each query per line:  ```QID\tDOCID\t1```. The, modify the ```run_file``` variable in ```create_train_pkl_file.py``` to point to your desired ```run_file```.
  5. To train BERT-QPP<sub>cross</sub> we require query, first retrieved document, and the queries' performance. To do so,  in ```create_train_pkl_file.py``` we create a dictionary including the following attributes:
