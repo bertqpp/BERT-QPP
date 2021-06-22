@@ -13,15 +13,11 @@ with open('pklfiles/train_map.pkl', 'rb') as f:
 train_set=[]
 
 for key in q_map_dic_train:
-    if "first_doc" in q_map_dic_train[key].keys():
-        qtext=q_map_dic_train[key]["qtext"]
-        firstdoctext=q_map_dic_train[key]["doc_text"]
-        actual_map = q_map_dic_train[key] ["map"]
-        train_set.append( InputExample(texts=[qtext,firstdoctext],label=actual_map ))
+    qtext=q_map_dic_train[key]["qtext"]
+    firstdoctext=q_map_dic_train[key]["doc_text"]
+    actual_map = q_map_dic_train[key] ["map"]
+    train_set.append( InputExample(texts=[qtext,firstdoctext],label=actual_map ))
 
-    if len(train_set)>1000:
-        break
-print(len(train_set))
 
 batch_size=8
 epoch_num=1
