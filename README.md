@@ -15,8 +15,8 @@ To train BERT-QPP<sub>cross</sub> we require query, first retrieved document, an
     train_dic[qid]["first_retrieved_document"]=document_text
  ```
  1. run ```create_train_pkl_file.py``` to save a dictionary including query and document text as well as their associated performance.
- 2. run ```train_CE.py```. On a single 24GB RTX3090 GPU, it took less than 2 hours. You may also change the ```epoch_num```,```batch_size```, and initial  pre-trained model in this file. We used ```bert-base-uncased``` in this experiment.
- 3. 
+ 2. run ```train_CE.py```. On a single 24GB RTX3090 GPU, it took less than 2 hours. You may also change the ```epoch_num```,```batch_size```, and initial  pre-trained model in this file. We used ```bert-base-uncased``` in this experiment. The trained model will be saved in ```models``` directory.
+ 3. You may also download our BERT-QPP<sub>cross</sub> trained model on bert-based-uncased from here.
  
 ## BERT-QPP<sub>bi</sub>
 
