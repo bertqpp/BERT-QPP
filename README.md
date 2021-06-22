@@ -6,7 +6,7 @@ We adopt two architechtures namely cross-encoder network and bi-encoder network 
 
 ## BERT-QPP<sub>cross</sub>
 
-To train BERT-QPP<sub>cross</sub> we require query, first retrieved document, and the queries' performance. To do so, we  in 'create_train_pkl_file.py' we create a dictionary including the following attributes:
+To train BERT-QPP<sub>cross</sub> we require query, first retrieved document, and the queries' performance. To do so, we  in ```create_train_pkl_file.py``` we create a dictionary including the following attributes:
 ```
     train_dic[qid] ["text"]=query_text
     train_dic[qid] ["map"]=query_performance_value
