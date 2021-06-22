@@ -6,6 +6,10 @@ We adopt two architechtures namely cross-encoder network and bi-encoder network 
 
 To replicate our results  with BERT-QPP<sub>cross</sub> and BERT-QPP<sub>bi</sub> on MSMARCO passage collection, clone this repository and download MSMARCO collection and put it in ```collection``` repository. In addition, required packages are listed in ```requirement.txt``` on python 3.7+. 
 
+```bm25_first_docs_train.tsv``` and ```bm25_first_docs_dev.tsv``` includes the run file for first retrieved documents for queries in MSMARCO train and dev set. You can put the runfile of your desired retrieval approach in the folloinwg format for each query per line: 
+```
+QID\tDOCID\t1
+```
 ## BERT-QPP<sub>cross</sub>
 
 To train BERT-QPP<sub>cross</sub> we require query, first retrieved document, and the queries' performance. To do so,  in ```create_train_pkl_file.py``` we create a dictionary including the following attributes:
@@ -14,9 +18,10 @@ To train BERT-QPP<sub>cross</sub> we require query, first retrieved document, an
     train_dic[qid] ["map"]=query_performance_value
     train_dic[qid]["first_retrieved_document"]=document_text
  ```
- 1. run ```create_train_pkl_file.py``` to save a dictionary including query and document text as well as their associated performance.
- 2. run ```train_CE.py```. On a single 24GB RTX3090 GPU, it took less than 2 hours. You may also change the ```epoch_num```,```batch_size```, and initial  pre-trained model in this file. We used ```bert-base-uncased``` in this experiment. The trained model will be saved in ```models``` directory.
- 3. You may also download our BERT-QPP<sub>cross</sub> trained model on bert-based-uncased from here.
+ 1. run ```create_train_pkl_file.py``` to save a dictionary including query and document text as well as their associated performance. AS a result ```train.pkl``` will be saved in ```pklfiles``` directory.
+ 2. run ```create_test_pkl_file.py``` to save a dictionary including query and document text on the MSMARCO developement set.
+ 3. run ```train_CE.py```. On a single 24GB RTX3090 GPU, it took less than 2 hours. You may also change the ```epoch_num```,```batch_size```, and initial  pre-trained model in this file. We used ```bert-base-uncased``` in this experiment. The trained model will be saved in ```models``` directory.
+ 4. If you are not willing to train the model, you can download our BERT-QPP<sub>cross</sub> trained model on bert-based-uncased from here.
  
 ## BERT-QPP<sub>bi</sub>
 
