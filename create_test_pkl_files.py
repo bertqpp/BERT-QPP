@@ -16,7 +16,7 @@ q_map_dic={}
 for line in q_file:
     qid,qtext=line.rstrip().split('\t')
     q_map_dic[qid]={}
-    q_map_dic[qid] ["text"]=qtext
+    q_map_dic[qid] ["qtext"]=qtext
     
 run_file=open('bm25_first_docs_dev.tsv','r').readlines()
 for line in run_file:
