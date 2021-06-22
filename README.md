@@ -31,7 +31,7 @@ To replicate our results  with BERT-QPP<sub>cross</sub> and BERT-QPP<sub>bi</sub
  4. The results will be saved in results directory in the following format: QID\tPredicted_QPP_value
 The results will be saved in ```results``` directory in the following format:
     ```QID<\t>Predicted_QPP_value```
- 5. To evaluate the results, you may calculate the correlation between the actual performance of each query and predicted QPP value.
+ 5. To evaluate the results, you can calculate the correlation between the actual performance of each query and predicted QPP value.
 
 ## BERT-QPP<sub>bi</sub>
  1. run ```train_bi.py``` to learn the map@20 of BM25 retrieval on MSMARCO train set. . me On a single 24GB RTX3090 GPU, it took ~1hour. You may also change the ```epoch_num```,```batch_size```, and initial  pre-trained model in this file. We used ```bert-base-uncased``` in this experiment. The trained model will be saved in ```models``` directory.
@@ -40,5 +40,5 @@ The results will be saved in ```results``` directory in the following format:
  4. The results will be saved in results directory in the following format: QID\tPredicted_QPP_value
 The results will be saved in ```results``` directory in the following format:
     ```QID\tPredicted_QPP_value```
- 5. To evaluate the results, you may calculate the correlation between the actual performance of each query and predicted QPP value.
+ 5. To evaluate the results, you can calculate the correlation between the actual performance of each query and predicted QPP value.
 
