@@ -18,7 +18,7 @@ for line in query_map_file:
     qid,qtext,qmap=line.split('\t')
     q_map_dic_train[qid]={}
     q_map_dic_train[qid] ["qtext"]=qtext
-    q_map_dic_train[qid] ["map"]=float(qmap)
+    q_map_dic_train[qid] ["performance"]=float(qmap)
 
 # run file including first retrieved documents per query
 run_file=open('run/bm25_first_docs_train.tsv','r').readlines()
