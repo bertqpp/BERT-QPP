@@ -4,7 +4,7 @@ In this paper, we adopt contextual embeddings to perform performance prediction 
 
 We adopt two architechtures namely cross-encoder network and bi-encoder network to address QPP task. 
 
-To replicate our results  with BERT-QPP<sub>cross</sub> and BERT-QPP<sub>bi</sub> on MSMARCO passage collection, clone this repository and download MSMARCO collection and put it in ```collection``` repository. Install the required packages in ```requirement.txt``` on python 3.7+. 
+To replicate our results  with BERT-QPP<sub>cross</sub> and BERT-QPP<sub>bi</sub> on MSMARCO passage collection, clone this repository and download MSMARCO collection and put it in ```collection``` repository. In addition, required packages are listed in ```requirement.txt``` on python 3.7+. 
 
 ## BERT-QPP<sub>cross</sub>
 
