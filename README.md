@@ -34,4 +34,5 @@ To replicate our results  with BERT-QPP<sub>cross</sub> and BERT-QPP<sub>bi</sub
 
 The results will be saved in ```results``` directory in the following format:
     ```QID\tPredicted_QPP_value```
-To evaluate the results, you may want to calculate the correlation between the actual performance of each query and predicted QPP value.
+    
+To evaluate the results, you  may calculate the correlation between the actual performance of each query and predicted QPP value.
