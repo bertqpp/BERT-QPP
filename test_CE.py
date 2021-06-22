@@ -18,7 +18,7 @@ model = CrossEncoder("models/"+trained_model, num_labels=1)
 scores=model.predict(sentences)
 actual=[]
 predicted=[]
-out=open('results/qpp-corss_'+trained_model,'w')
+out=open('results/QPP-corss_'+trained_model,'w')
 for i in range(len(sentences)):
     predicted.append(float(scores[i]))
     out.write(queries[i]+'\t'+str(predicted[i])+'\n')
