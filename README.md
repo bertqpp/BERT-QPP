@@ -18,10 +18,13 @@ To train BERT-QPP<sub>cross</sub> we require query, first retrieved document, an
     train_dic[qid] ["map"]=query_performance_value
     train_dic[qid]["first_retrieved_document"]=document_text
  ```
- 1. run ```create_train_pkl_file.py``` to save a dictionary including query and document text as well as their associated performance. AS a result ```train.pkl``` will be saved in ```pklfiles``` directory.
- 2. run ```create_test_pkl_file.py``` to save a dictionary including query and document text on the MSMARCO developement set.
+ 1. run ```create_train_pkl_file.py``` to save a dictionary including query and document text as well as their associated performance. As a result ```train_map.pkl``` will be saved in ```pklfiles``` directory.
+ 2. run ```create_test_pkl_file.py``` to save a dictionary including query and document text on the MSMARCO developement set. As a result ```test_dev_map.pkl``` will be saved in ```pklfiles``` directory.
  3. run ```train_CE.py```. On a single 24GB RTX3090 GPU, it took less than 2 hours. You may also change the ```epoch_num```,```batch_size```, and initial  pre-trained model in this file. We used ```bert-base-uncased``` in this experiment. The trained model will be saved in ```models``` directory.
  4. If you are not willing to train the model, you can download our BERT-QPP<sub>cross</sub> trained model on bert-based-uncased from here.
+ 5. add the ```trained_model``` you are willing to test in ```test_CE.py``` and  run ```test_CE.py```.
+ 6. the results will be saved in ```results``` directory in the following format:
+    ```QID\tPredicted_QPP_value```
  
 ## BERT-QPP<sub>bi</sub>
 
