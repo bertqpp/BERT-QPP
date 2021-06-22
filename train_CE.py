@@ -28,7 +28,7 @@ warmup_steps = math.ceil(len(train_dataloader) * epoch_num * 0.1) #10% of train 
 model_name='bert-base-uncased'
 
 model = CrossEncoder(model_name, num_labels=1)
-model_name="models/tuned_model_"+model_name+"_e"+str(epoch_num)+'_b'+str(batch_size)
+model_name="models/tuned_model_ce_"+model_name+"_e"+str(epoch_num)+'_b'+str(batch_size)
 # Train the model
 model.fit(train_dataloader=train_dataloader,
           epochs=epoch_num,
