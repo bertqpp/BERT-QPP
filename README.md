@@ -4,13 +4,18 @@ In this paper, we adopt contextual embeddings to perform performance prediction 
 
 We adopt two architechtures namely cross-encoder network and bi-encoder network to address QPP task. 
 
+To replicate our results  with BERT-QPP<sub>cross</sub> and BERT-QPP<sub>bi</sub> on MSMARCO passage collection, clone this repository and download MSMARCO collection and put it in ```collection``` repository. Install the required packages in ```requirement.txt``` on python 3.7+. 
+
 ## BERT-QPP<sub>cross</sub>
 
-To train BERT-QPP<sub>cross</sub> we require query, first retrieved document, and the queries' performance. To do so, we  in ```create_train_pkl_file.py``` we create a dictionary including the following attributes:
+To train BERT-QPP<sub>cross</sub> we require query, first retrieved document, and the queries' performance. To do so,  in ```create_train_pkl_file.py``` we create a dictionary including the following attributes:
 ```
     train_dic[qid] ["text"]=query_text
     train_dic[qid] ["map"]=query_performance_value
     train_dic[qid]["first_retrieved_document"]=document_text
  ```
+ 1. run ```create_train_pkl_file.py``` to save a dictionary including query and document text as well as their associated performance.
+ 2. 
+ 
 ## BERT-QPP<sub>bi</sub>
 
