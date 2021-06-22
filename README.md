@@ -4,5 +4,5 @@ In this paper, we adopt contextual embeddings to perform performance prediction 
 
 We adopt two architechtures namely cross-encoder network and bi-encoder network to address QPP task. 
 
-## BERT-QPP_{Cross}
+## BERT-QPP<sub>Cross</sub>
 
