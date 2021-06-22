@@ -25,7 +25,7 @@ run_file=open('bm25_first_docs_train.tsv','r').readlines()
 for line in run_file:
     qid,docid,rank=line.split('\t')
     if qid in q_map_dic_train.keys():
-        q_map_dic_train[qid]["first_doc"]=col_dic[docid]
+        q_map_dic_train[qid]["doc_text"]=col_dic[docid]
 
 with open('pklfiles/train_map.pkl', 'wb') as f:
     pickle.dump(q_map_dic_train, f, pickle.HIGHEST_PROTOCOL)
