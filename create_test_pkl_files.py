@@ -3,8 +3,7 @@ from collections import defaultdict
 from typing import runtime_checkable
 col_dic=defaultdict(list)
 
-#collection_file=open('/path/to/msmarco/collection/collection.tsv','r').readlines()
-collection_file=open('/home/ir-bias/Negar/T5_light/msmarco-passage/collection.tsv','r').readlines()
+collection_file=open('collection/collection.tsv','r').readlines()
 
 for line in collection_file:
     docid,doctext= line.rstrip().split('\t')
