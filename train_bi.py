@@ -11,7 +11,7 @@ train_examples=[]
 for key in q_map_first_doc_train:
     if "first_doc" in q_map_first_doc_train[key].keys():
         qtext=q_map_first_doc_train[key]["qtext"]
-        firstdoctext=q_map_first_doc_train[key]["first_doc"]
+        firstdoctext=q_map_first_doc_train[key]["doc_text"]
         map_value=q_map_first_doc_train[key]["map"]
         train_examples.append( InputExample(texts=[qtext,firstdoctext],label=map_value ))
     if len(train_examples)>100:
