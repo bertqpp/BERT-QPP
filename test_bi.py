@@ -15,7 +15,7 @@ qs=[]
 
 for key in q_map_first_doc_test:
     if "first_doc" in q_map_first_doc_test[key].keys():
-        sentences1.append(q_map_first_doc_test[key]["text"])
+        sentences1.append(q_map_first_doc_test[key]["qtext"])
         sentences2.append(q_map_first_doc_test[key]["first_doc"])
         qs.append(key)
 
