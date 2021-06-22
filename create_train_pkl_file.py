@@ -3,7 +3,7 @@ from collections import defaultdict
 col_dic=defaultdict(list)
 
 # replace msmarco collection path
-collection_file=open('/path/to/msmarco/collection/collection.tsv','r').readlines()
+collection_file=open('collection/collection.tsv','r').readlines()
 
 for line in collection_file:
     docid,doctext= line.rstrip().split('\t')
