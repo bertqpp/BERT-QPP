@@ -18,7 +18,7 @@ for line in q_file:
     q_map_dic[qid]={}
     q_map_dic[qid] ["qtext"]=qtext
     
-run_file=open('bm25_first_docs_dev.tsv','r').readlines()
+run_file=open('run/bm25_first_docs_dev.tsv','r').readlines()
 for line in run_file:
     qid,docid,rank=line.split('\t')
     if qid in q_map_dic.keys():
