@@ -15,7 +15,7 @@ train_set=[]
 for key in q_map_dic_train:
     if "first_doc" in q_map_dic_train[key].keys():
         qtext=q_map_dic_train[key]["qtext"]
-        firstdoctext=q_map_dic_train[key]["first_doc"]
+        firstdoctext=q_map_dic_train[key]["doc_text"]
         actual_map = q_map_dic_train[key] ["map"]
         train_set.append( InputExample(texts=[qtext,firstdoctext],label=actual_map ))
 
