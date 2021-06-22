@@ -17,6 +17,7 @@ To replicate our results  with BERT-QPP<sub>cross</sub> and BERT-QPP<sub>bi</sub
     train_dic[qid] ["map"]=query_performance_value
     train_dic[qid]["first_retrieved_document"]=document_text
  ```
+ you can train the model on your desired metric by creating the assosiated train pkl file. Here, we use map@20.
  6. Run ```create_train_pkl_file.py``` to save a dictionary including query and document text as well as their associated performance. As a result ```train_map.pkl``` will be saved in ```pklfiles``` directory.
  7. Run ```create_test_pkl_file.py``` to save a dictionary including query and document text on the MSMARCO developement set. As a result ```test_dev_map.pkl``` will be saved in ```pklfiles``` directory.
 
@@ -29,4 +30,5 @@ To replicate our results  with BERT-QPP<sub>cross</sub> and BERT-QPP<sub>bi</sub
     ```QID\tPredicted_QPP_value```
 
 ## BERT-QPP<sub>bi</sub>
+ 1. run ```train_bi.py``` to learn the map@20 of BM25 retrieval on MSMARCO train set. . me On a single 24GB RTX3090 GPU, it took less than 2 hours. You may also change the ```epoch_num```,```batch_size```, and initial  pre-trained model in this file. We used ```bert-base-uncased``` in this experiment. The trained model will be saved in ```models``` directory.
 
