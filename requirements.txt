@@ -1,1 +1,5 @@
-transformers
+sentence_transformers 
+torch
+pickle
+math
+scipy
