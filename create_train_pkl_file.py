@@ -27,6 +27,6 @@ for line in run_file:
     if qid in q_map_dic_train.keys():
         q_map_dic_train[qid]["first_doc"]=col_dic[docid]
 
-with open('pklfiles/train.pkl', 'wb') as f:
+with open('pklfiles/train_map.pkl', 'wb') as f:
     pickle.dump(q_map_dic_train, f, pickle.HIGHEST_PROTOCOL)
 
