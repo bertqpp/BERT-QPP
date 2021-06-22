@@ -3,7 +3,7 @@ from torch.utils.data import DataLoader
 import pickle 
 from sentence_transformers.cross_encoder import CrossEncoder
 from sentence_transformers.cross_encoder.evaluation import CECorrelationEvaluator
-import math,logging
+import math
 
 
 with open('pklfiles/train_map.pkl', 'rb') as f:
