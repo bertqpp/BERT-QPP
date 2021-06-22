@@ -6,7 +6,7 @@ from sentence_transformers.cross_encoder.evaluation import CECorrelationEvaluato
 import math,logging
 
 
-with open('pklfiles/map_20_train.pkl', 'rb') as f:
+with open('pklfiles/train.pkl', 'rb') as f:
     q_map_dic_train=pickle.load(f)
 
 
