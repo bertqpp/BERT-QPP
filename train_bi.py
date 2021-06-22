@@ -9,13 +9,11 @@ with open('pklfiles/train_map.pkl', 'rb') as f:
 train_examples=[]
 
 for key in q_map_first_doc_train:
-    if "first_doc" in q_map_first_doc_train[key].keys():
-        qtext=q_map_first_doc_train[key]["qtext"]
-        firstdoctext=q_map_first_doc_train[key]["doc_text"]
-        map_value=q_map_first_doc_train[key]["map"]
-        train_examples.append( InputExample(texts=[qtext,firstdoctext],label=map_value ))
-    if len(train_examples)>100:
-        break
+    qtext=q_map_first_doc_train[key]["qtext"]
+    firstdoctext=q_map_first_doc_train[key]["doc_text"]
+    map_value=q_map_first_doc_train[key]["map"]
+    train_examples.append( InputExample(texts=[qtext,firstdoctext],label=map_value ))
+
 
 batch_size=8
 num_epoch=1
