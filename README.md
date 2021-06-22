@@ -14,9 +14,9 @@ To replicate our results  with BERT-QPP<sub>cross</sub> and BERT-QPP<sub>bi</sub
     * Then, modify the ```run_file``` variable in ```create_train_pkl_file.py``` and ```create_test_pkl_file.py``` so that they point to your desired ```run_file```s on train and sev set of MSMARCO.
  5. To train BERT-QPP<sub>cross</sub>, we require the query, the first retrieved document, and the queries' performance. To do so,  in ```create_train_pkl_file.py``` we create a dictionary including the following attributes:
 ```
-    train_dic[qid] ["text"]=query_text
-    train_dic[qid] ["map"]=query_performance_value
-    train_dic[qid]["first_retrieved_document"]=document_text
+    train_dic[qid] ["qtext"]=query_text
+    train_dic[qid] ["performance"]=query_performance_value
+    train_dic[qid]["doc_text"]=document_text
  ```
    you can train the model on your desired metric by creating the assosiated train pkl file. Here, we use map@20.
    Run ```create_train_pkl_file.py``` to save a dictionary including query and document text as well as their associated performance. As a result ```train_map.pkl``` will be saved in ```pklfiles``` directory.
