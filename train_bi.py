@@ -3,7 +3,7 @@ from torch.utils.data import DataLoader
 import pickle 
 from scipy.stats import kendalltau,pearsonr
 
-with open('pklfiles/map_20_train.pkl', 'rb') as f:
+with open('pklfiles/train_map.pkl', 'rb') as f:
     q_map_first_doc_train=pickle.load(f)
 
 train_examples=[]
