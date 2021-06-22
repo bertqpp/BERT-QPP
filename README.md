@@ -29,13 +29,17 @@ To replicate our results  with BERT-QPP<sub>cross</sub> and BERT-QPP<sub>bi</sub
  1. run ```train_CE.py``` to learn the map@20 of BM25 retrieval on MSMARCO train set. alternatively, you can train with your desired metric by creating the assosiated train pkl file. me On a single 24GB RTX3090 GPU, it took less than 2 hours. You may also change the ```epoch_num```,```batch_size```, and initial  pre-trained model in this file. We used ```bert-base-uncased``` in this experiment. The trained model will be saved in ```models``` directory.
  2. If you are not willing to train the model, you can download our BERT-QPP<sub>cross</sub> trained model on bert-based-uncased from here.
  3. add the ```trained_model``` you are willing to test in ```test_CE.py``` and  run ```test_CE.py```.
+ 4. The results will be saved in results directory in the following format: QID\tPredicted_QPP_value
+The results will be saved in ```results``` directory in the following format:
+    ```QID\tPredicted_QPP_value```
+ 5. To evaluate the results, you may calculate the correlation between the actual performance of each query and predicted QPP value.
 
 ## BERT-QPP<sub>bi</sub>
  1. run ```train_bi.py``` to learn the map@20 of BM25 retrieval on MSMARCO train set. . me On a single 24GB RTX3090 GPU, it took ~1hour. You may also change the ```epoch_num```,```batch_size```, and initial  pre-trained model in this file. We used ```bert-base-uncased``` in this experiment. The trained model will be saved in ```models``` directory.
  2. If you are not willing to train the model, you can download our BERT-QPP<sub>bi</sub> trained model on bert-based-uncased from here.
  3. add the ```trained_model``` you are willing to test in ```test_bi.py``` and  run ```test_bi.py```.
-
+ 4. The results will be saved in results directory in the following format: QID\tPredicted_QPP_value
 The results will be saved in ```results``` directory in the following format:
     ```QID\tPredicted_QPP_value```
-    
-To evaluate the results, you  may calculate the correlation between the actual performance of each query and predicted QPP value.
+ 5. To evaluate the results, you may calculate the correlation between the actual performance of each query and predicted QPP value.
+
