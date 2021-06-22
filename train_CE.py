@@ -9,12 +9,6 @@ import math,logging
 with open('pklfiles/map_20_train.pkl', 'rb') as f:
     q_map_dic_train=pickle.load(f)
 
-mrr={}
-mrr_file=open('../mrr_train_set','r').readlines()
-for line in mrr_file:
-    qid,mrr_=line.rstrip().split('\t')
-    mrr[qid]=float(mrr_)
-
 
 train_set=[]
 
