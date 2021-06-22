@@ -22,7 +22,7 @@ run_file=open('bm25_first_docs_dev.tsv','r').readlines()
 for line in run_file:
     qid,docid,rank=line.split('\t')
     if qid in q_map_dic.keys():
-        q_map_dic[qid]["first_doc"]=col_dic[docid]
+        q_map_dic[qid]["doc_text"]=col_dic[docid]
 
 
 with open('pklfiles/test_dev_map.pkl', 'wb') as f:
