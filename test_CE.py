@@ -2,7 +2,7 @@ import pickle
 from scipy.stats import kendalltau,pearsonr
 
 from sentence_transformers.cross_encoder import CrossEncoder
-trained_model="tuned_model_bert-base-uncased_e1_b8"
+trained_model="tuned_model_ce_bert-base-uncased_e1_b8"
 
 with open('pklfiles/test_dev_map.pkl', 'rb') as f:
     q_map_first_doc_test=pickle.load(f)
