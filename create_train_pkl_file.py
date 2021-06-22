@@ -17,7 +17,7 @@ query_map_file=open('train_query_map_20.tsv','r').readlines()
 for line in query_map_file:
     qid,qtext,qmap=line.split('\t')
     q_map_dic_train[qid]={}
-    q_map_dic_train[qid] ["text"]=qtext
+    q_map_dic_train[qid] ["qtext"]=qtext
     q_map_dic_train[qid] ["map"]=float(qmap)
 
 # run file including first retrieved documents per query
