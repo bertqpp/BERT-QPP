@@ -21,7 +21,7 @@ for line in query_map_file:
     q_map_dic_train[qid] ["map"]=float(qmap)
 
 # run file including first retrieved documents per query
-run_file=open('bm25_first_docs_train.tsv','r').readlines()
+run_file=open('run/bm25_first_docs_train.tsv','r').readlines()
 for line in run_file:
     qid,docid,rank=line.split('\t')
     if qid in q_map_dic_train.keys():
